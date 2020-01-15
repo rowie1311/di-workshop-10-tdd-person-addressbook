@@ -43,4 +43,27 @@ it ('should accept new phone numbers into phone number array', () => {
     expect (person.phoneNumber).to.deep.equal(['07715833815', '01536401372'])
 })
 
+it('should return a formatted details about person', () => {
+    var person = new Person('Joe', 'Bloggs','1 Jan 1990')
+    person.addphoneNumber('07715833815')
+    person.addphoneNumber('01536401372')
+    person.addEmail('joe@example.com')
+    person.addEmail('joe.bloggs@workexample.com')
+    expect(person.returnFormattedDetails()).to.equal(
+    
+ `Joe Bloggs
+ ----------
+ DOB: 1 Jan 1990
+
+ Email Addresses:
+ - joe@example.com
+ - joe.bloggs@workexample.com
+
+ Phone Numbers:
+ - 07715833815
+ - 01536401372`)
+
+    
+})
+
 })

@@ -19,7 +19,19 @@ class Person {
         addphoneNumber(phoneNumber) {
             this.phoneNumber.push(phoneNumber)
         }
+        returnFormattedDetails() {
+ const emailList = "- " + this.email.join("\n - ")
+ const phoneList = "- " + this.phoneNumber.join("\n - ")
+ return `${this.fullname()}
+ ----------
+ DOB: ${this.dob}
 
+ Email Addresses:
+ ${emailList}
+
+ Phone Numbers:
+ ${phoneList}` 
+ }
          
 }
 
